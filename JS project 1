@@ -38,6 +38,9 @@ class NFTCollection {
     }
 
     public void listNFTs() {
+        System.out.println("\nWELCOME TO THE MINT OF SHOE WORLD");
+        System.out.println("\n MINTED NFT's ARE HERE \n ");
+        System.out.println("------------------------");
         for (NFT nft : nfts) {
             System.out.println("Name: " + nft.getName());
             System.out.println("Description: " + nft.getDescription());
