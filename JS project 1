@@ -1,0 +1,70 @@
+import java.util.ArrayList;
+import java.util.List;
+
+class NFT {
+    private String name;
+    private String description;
+
+    private String category;
+
+    public NFT(String name, String description, String category) {
+        this.name = name;
+        this.description = description;
+        this.category = category;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+    public String getCategory() {
+        return category;
+    }
+}
+
+class NFTCollection {
+    private List<NFT> nfts;
+
+    public NFTCollection() {
+        nfts = new ArrayList<>();
+    }
+
+    public void mintNFT(String name, String description, String category) {
+        NFT nft = new NFT(name, description, category);
+        nfts.add(nft);
+    }
+
+    public void listNFTs() {
+        for (NFT nft : nfts) {
+            System.out.println("Name: " + nft.getName());
+            System.out.println("Description: " + nft.getDescription());
+            System.out.println("Category: " + nft.getCategory());
+            System.out.println("------------------------");
+        }
+    }
+
+    public int getTotalSupply() {
+        return nfts.size();
+    }
+}
+
+    class NFTManager {
+    public static void main(String[] args) {
+        NFTCollection collection = new NFTCollection();
+
+        // Minting NFTs
+        collection.mintNFT(" 1", "A white sneaker",  "EPIC");
+        collection.mintNFT(" 2", "A black sports shoe", "LEGENDARY");
+        collection.mintNFT(" 3", "A brown formal shoe",  "RARE");
+        collection.mintNFT("4", "A Blue trekking shoe", "COMMON");
+        // Listing NFT Details
+        collection.listNFTs();
+
+        // Getting Total Supply
+        int totalSupply = collection.getTotalSupply();
+        System.out.println("Total Supply: " + totalSupply);
+    }
+}
